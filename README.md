@@ -12,7 +12,6 @@ Smart Aquarium is an IoT-based project that automates the monitoring and mainten
 - 5V power adapter
 - Custom Water Level Indicator
 
-![Circuit Diagram](https://github.com/d-nihalani/Smart_Aquarium/blob/main/circuit-diagram.png)
 
 
 ## Features
