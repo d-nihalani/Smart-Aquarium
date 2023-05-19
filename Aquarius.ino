@@ -5,7 +5,7 @@
 #include <Servo.h>
 
 
-
+#define LM35_PIN GPIO_NUM_32 
 #define button1_vpin V3 
 #define button2_vpin V4
 #define BLYNK_TEMPLATE_ID "TMPL3AEcug53d"
@@ -46,9 +46,9 @@ BLYNK_WRITE(V3) // virtual pin V3 control pump 1
   bool value1 = param.asInt();
   // Check these values and turn the relay2 ON and OFF
   if (value1 == 1) {
-    digitalWrite(12, LOW);
-  } else {
     digitalWrite(12, HIGH);
+  } else {
+    digitalWrite(12, LOW);
   }
 }
 
@@ -57,10 +57,19 @@ BLYNK_WRITE(V4) // virtual pin V4 control pump 2
    bool value2 = param.asInt();
   // Check these values and turn the relay2 ON and OFF
   if (value2 == 1) {
-    digitalWrite(14, LOW);
-  } else {
     digitalWrite(14, HIGH);
+  } else {
+    digitalWrite(14, LOW);
   }
+}
+
+void sendTemperature() {
+  // Read the analog voltage from LM35 sensor
+  float sensorValue = analogRead(LM35_PIN) * (3.3 / 4095);
+  // Convert the sensor value to temperature in degrees Celsius
+  float temperature = ((sensorValue) * 100.0)+10; 
+  // Send temperature value to Blynk app
+  Blynk.virtualWrite(V5, temperature);
 }
 
 void setup()
@@ -72,8 +81,10 @@ void setup()
   servo.write(0);
   pinMode(12, OUTPUT); // set relay channel 1 to output
   pinMode(14, OUTPUT); // set relay channel 2 to output
-  digitalWrite(14,LOW);
-  digitalWrite(12,LOW);
+  digitalWrite(14,HIGH);
+  digitalWrite(12,HIGH);
+  
+  timer.setInterval(1000L, sendTemperature); 
 }
 
 void loop() 
