@@ -52,9 +52,6 @@ You can do this for web and mobile dashboard both. Refer to these screenshots fo
 
 ![Blynk-Web-Template](https://github.com/d-nihalani/Smart-Aquarium/blob/main/srcs/wt.png)
 ![Blynk-Web-Device](https://github.com/d-nihalani/Smart-Aquarium/blob/main/srcs/wd.png)
-
-![Blynk-Mobile-Template](https://github.com/d-nihalani/Smart-Aquarium/blob/main/srcs/mt.png)
-![Blynk-Mobile-Control](https://github.com/d-nihalani/Smart-Aquarium/blob/main/srcs/mc.png)
  
 ## Future Scope
 - Adding a pH sensor, Dissolved Oxygen Sensor, TDS sensor for monitoring water quality.
@@ -63,7 +60,7 @@ You can do this for web and mobile dashboard both. Refer to these screenshots fo
 
 ## Credits
 - [Blynk IoT Platform](https://blynk.io/) for the mobile app interface
-- [Adafruit Industries](https://www.adafruit.com/) for providing useful libraries and tutorials
+- [ESP32](https://github.com/ahmadlogs/esp32) for the innovatives of esp32.
 
 ## License
 This project is licensed under the GNU License - see the [LICENSE.md](LICENSE.md) file for details.
