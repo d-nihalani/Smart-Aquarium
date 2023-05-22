@@ -12,7 +12,12 @@ Smart Aquarium is an IoT-based project that automates the monitoring and mainten
 - 5V power adapter
 - Custom Water Level Indicator
 
-![Circuit Diagram](https://github.com/d-nihalani/Smart-Aquarium/blob/main/Circuit-Diagram.png)
+- Arduino Libraries - Blynk by Volodymyr Shymanskyy, ServoESP32 by Jaroslav Paral
+- Board Used ESP32 Dev Module
+
+<div align="center">
+  <img src="https://github.com/d-nihalani/Smart-Aquarium/blob/main/Circuit-Diagram.png" alt="Circuit Diagram">
+</div>
 
 
 ## Features
@@ -24,10 +29,33 @@ Smart Aquarium is an IoT-based project that automates the monitoring and mainten
 ## Getting Started
 To build and deploy the project, follow these steps:
 1. Connect the components as shown in the circuit diagram
-2. Upload the sketch to the Arduino IDE
-3. Install the Blynk mobile app on your smartphone and connect to a WiFi network
-4. Monitor and control your aquarium from anywhere
+2. Add requried libraries and boards mentioned.
+3. Upload the sketch to the Arduino IDE
+4. Rename your wifi credentials.
+5. Install the Blynk mobile app on your smartphone and connect to a WiFi network.
+6. Integrate Blynk Firmware configuration to your code. 
+   (Blynk -> Devices-> YourDevice -> Device Info -> Firmware Configuration Code.)
+7. Monitor and control your aquarium from anywhere with wifi
 
+## Blynk Cloud
+1. Download and install the Blynk app from your device's app store.
+2. Create a new Blynk account and log in.
+3. Create a new Blynk project and obtain the authentication token.
+
+### Blynk Configuration
+
+1. Open the Blynk templare in the app and configure the desired widgets.
+2. Add a 7 widgets and assign it to a virtual pins (e.g., V0, V1).
+3. Customize the button settings, such as style, colors, and labels.
+4. Enable the "Read" option to receive the button state from the ESP32.
+You can do this for web and mobile dashboard both. Refer to these screenshots for an idea.
+
+![Blynk-Web-Template](https://github.com/d-nihalani/Smart-Aquarium/blob/main/srcs/wt.png)
+![Blynk-Web-Device](https://github.com/d-nihalani/Smart-Aquarium/blob/main/srcs/wd.png)
+
+![Blynk-Mobile-Template](https://github.com/d-nihalani/Smart-Aquarium/blob/main/srcs/mt.png)
+![Blynk-Mobile-Control](https://github.com/d-nihalani/Smart-Aquarium/blob/main/srcs/mc.png)
+ 
 ## Future Scope
 - Adding a pH sensor, Dissolved Oxygen Sensor, TDS sensor for monitoring water quality.
 - Integration with voice assistants such as Amazon Alexa and Google Home
